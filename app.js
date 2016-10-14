@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 var reload = require('reload');
 
 var app = express();
-var port = 5000;
+var port = 8080;
 
 app.set('port', process.env.PORT || port);
 
