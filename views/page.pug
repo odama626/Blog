@@ -1,0 +1,19 @@
+extends layout.pug
+
+block mainContent
+  main.mdl-layout__content
+    .mdl-grid
+      .mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--4dp
+        .mdl-card__title
+          h2.mdl-card__title-text #{article.title}
+        .mdl-card__media
+          img.article-image(src= article.banner.image, border="0", alt="banner image")
+        .mdl-card__supporting-text
+          div!= article.banner.text
+        for content in article.content
+          .mdl-grid
+            h3.mdl-cell.mdl-cell--12-col.mdl-typography--headline #{content.headline}
+            .mdl-cell.mdl-cell--6-col.mdl-card__supporting-text.no-padding
+              p!= content.details
+            .mdl-cell.mdl-cell--6-col
+              img.article-image(src= content.image, border="0", alt="")
